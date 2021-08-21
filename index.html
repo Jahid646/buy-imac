@@ -31,23 +31,23 @@
                 <!-- memory option -->
                 <div class="memory pt-5">
                     <h6>Memory</h6>
-                    <button class="btn border">8GB Unified Memory</button>
-                    <button class="btn border">16GB Unified Memory</button>
+                    <button id="memory-8gb" class="btn border">8GB Unified Memory</button>
+                    <button id="memory-16gb" class="btn border">16GB Unified Memory</button>
                 </div>
                 <!-- storage option  -->
                 <div class="storage pt-5">
                     <h6>Storage</h6>
-                    <button class="btn border">256GB SSD Storage</button>
-                    <button class="btn border">512GB SSD Sorage</button>
-                    <button class="btn border">1TB SSD Storage</button>
+                    <button onclick="calculateStorageCost('256gb'); updateSubTotal()" id="storage-256gb" class="btn border">256GB SSD Storage</button>
+                    <button onclick="calculateStorageCost('512gb'); updateSubTotal()" id="storage-512gb" class="btn border">512GB SSD Sorage</button>
+                    <button onclick="calculateStorageCost('1tb'); updateSubTotal()" id="storage-1tb" class="btn border">1TB SSD Storage</button>
                 </div>
 
                 <!-- delivery option  -->
                 <div class="delivery pt-5  ">
                     <h6>Chose Your Delivery Option</h6>
                   
-                        <button class="btn border">Friday, Aug 25 FREE Prime Delivery</button>
-                        <button class="btn border mt-2">Friday, Aug 21 Delivery Charge $20</button>
+                        <button onclick="calculateDeliveryCost('free'); updateSubTotal()" id="delivery-free" class="btn border">Friday, Aug 25 FREE Prime Delivery</button>
+                        <button onclick="calculateDeliveryCost('charge'); updateSubTotal()" id="delivery-withCharge" class="btn border mt-2">Friday, Aug 21 Delivery Charge $20</button>
                    
                     
                 </div>
@@ -59,24 +59,24 @@
                             <tbody>
                               <tr>
                                 <td>Best Price</td>
-                                <td>$ <span>1299</span></td>
+                                <td>$ <span id="best-price" >1299</span></td>
                               </tr>
                               <tr>
                                 <td>Extra Memory Cost</td>
-                                <td>$<span>0</span></td>
+                                <td>$<span id="memory-cost">0</span></td>
                               </tr>
                               <tr>
                                 <td>Extra Storage Cost</td>
-                                <td>$<span>0</span></td>
+                                <td>$<span id="storage-cost">0</span></td>
                               </tr>
                               <tr>
                                 <td>Delivery Charge</td>
-                                <td>$<span>0</span></td>
+                                <td>$<span id="delivery-cost">0</span></td>
                               </tr>
                               <tfoot>
                                     <tr>
                                       <td>Total Price</td>
-                                      <td>$<span>1299</span></td>
+                                      <td>$<span id="sub-total">1299</span></td>
                                     </tr>
                               </tfoot>
                             
@@ -87,8 +87,8 @@
                           <div class="promo pt-2">
                               <h6>Add Promo Code</h6>
                               <div class="d-flex">
-                                   <input class="form-control" type="text">
-                              <button class="btn btn-danger">Apply</button>
+                                   <input id="promo-input" class="form-control" type="text">
+                              <button onclick="applyPromoCode()" id="promo-apply" class="btn btn-danger">Apply</button>
                               </div>
                              
         
@@ -106,7 +106,7 @@
             <hr>
             <!-- Final Price  -->
             <div class="final-price text-center">
-                <h1>Total:  <span>1299</span></h1>
+                <h1>Total:  <span id="total-price">1299</span></h1>
             </div>
          </section>
     </main>
